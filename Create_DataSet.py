@@ -111,7 +111,7 @@ def splitting_on_train_and_test_dataset():
         cv2.imwrite(st_mask_path, mask)
 
 
-#splitting_on_dataset_256X256()
+splitting_on_dataset_256X256()
 #всего изображений - 373296
 splitting_on_train_and_test_dataset()
 #train dataset - 60802
