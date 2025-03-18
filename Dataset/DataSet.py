@@ -30,3 +30,12 @@ class DataSet(data.Dataset):
 
     def __len__(self):
         return self.length
+
+
+tr_img = tfs_v2.Compose([tfs_v2.ToImage(), tfs_v2.ToDtype(torch.float32, scale=True)])
+tr_mask = tfs_v2.Compose([tfs_v2.ToImage(), tfs_v2.ToDtype(torch.float32)])
+
+d_train = DataSet(TRAIN_DATASET_IMAGES, TRAIN_DATASET_MASKS, SIZE_TRAIN_DATASET, transform_img=tr_img, transform_mask=tr_mask)
+d_test = DataSet(TEST_DATASET_IMAGES, TEST_DATASET_MASKS, SIZE_TEST_DATASET, transform_img=tr_img, transform_mask=tr_mask)
+train_data = data.DataLoader(d_train, batch_size=4, shuffle=True)
+test_data = data.DataLoader(d_test, batch_size=1, shuffle=True)
