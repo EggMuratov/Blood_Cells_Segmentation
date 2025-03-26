@@ -80,13 +80,13 @@ def clean_directory(path):
 
 
 splitting_photo(path, path_buffer_img)
-print(f"SPLITTING IS OVER")
+print("SPLITTING IS OVER")
 
 getting_masks(model_path, path_buffer_img, path_buffer_mask)
-print(f"GETTING MASKS IS OVER")
+print("GETTING MASKS IS OVER")
 
 forming_general_mask(path_save_predicted, path_buffer_mask)
-print(f"FORMING GENERAL MASK IS OVER")
+print("FORMING GENERAL MASK IS OVER")
 
 clean_directory(path_buffer_img)
 clean_directory(path_buffer_mask)
